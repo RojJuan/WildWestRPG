@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bwo12chwsxdug"]
+
+[ext_resource type="FontFile" uid="uid://b3ln4n78bxmsk" path="res://assets/fonts/pixellari/Pixellari.ttf" id="1_qcy1e"]
+[ext_resource type="Texture2D" uid="uid://dl5qc4t144ba7" path="res://assets/sprites/ui/panel.png" id="2_282nj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dt4u2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw2m2"]
+texture = ExtResource("2_282nj")
+texture_margin_left = 5.7302
+texture_margin_top = 6.04087
+texture_margin_right = 6.04087
+texture_margin_bottom = 6.17613
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 48, 48)
+
+[resource]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_qcy1e")
+Label/styles/normal = SubResource("StyleBoxEmpty_dt4u2")
+Panel/styles/panel = SubResource("StyleBoxTexture_gw2m2")

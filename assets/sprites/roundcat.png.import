@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgcrbm3mrv3jx"
-path="res://.godot/imported/micheal.png-7a1abc7bcf826492ac82c3d943e7ea52.ctex"
+uid="uid://70r7k8qvi2tf"
+path="res://.godot/imported/roundcat.png-56c96bbbac0b4b666e96ece3229f9172.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://micheal.png"
-dest_files=["res://.godot/imported/micheal.png-7a1abc7bcf826492ac82c3d943e7ea52.ctex"]
+source_file="res://assets/sprites/roundcat.png"
+dest_files=["res://.godot/imported/roundcat.png-56c96bbbac0b4b666e96ece3229f9172.ctex"]
 
 [params]
 

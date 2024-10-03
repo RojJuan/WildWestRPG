@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://70r7k8qvi2tf"
-path="res://.godot/imported/roundcat.png-e4753cd2c28a7f812349e5d0e4f767a6.ctex"
+uid="uid://dl5qc4t144ba7"
+path="res://.godot/imported/panel.png-4c222da4682a867971228d98e4d575b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://roundcat.png"
-dest_files=["res://.godot/imported/roundcat.png-e4753cd2c28a7f812349e5d0e4f767a6.ctex"]
+source_file="res://assets/sprites/ui/panel.png"
+dest_files=["res://.godot/imported/panel.png-4c222da4682a867971228d98e4d575b9.ctex"]
 
 [params]
 
