@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://dspwvky1vm3sd"]
+
+[ext_resource type="Theme" uid="uid://bwo12chwsxdug" path="res://ui.tres" id="1_5vhxj"]
+[ext_resource type="Script" path="res://scripts/dialog.gd" id="1_hq7y6"]
+
+[node name="dialog" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_hq7y6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Speaker" type="Panel" parent="Control"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -413.0
+offset_top = -159.0
+offset_right = -213.0
+offset_bottom = -126.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_5vhxj")
+
+[node name="speaker_label" type="Label" parent="Control/Speaker"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialog" type="Panel" parent="Control"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -413.0
+offset_top = -119.0
+offset_right = 413.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_5vhxj")
+
+[node name="dialog_label" type="Label" parent="Control/Dialog"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
