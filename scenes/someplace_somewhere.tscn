@@ -9,9 +9,15 @@ size = Vector2(48, 54)
 
 [node name="someplace_somewhere" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.695, 1.695)
+drag_left_margin = 0.5
+drag_top_margin = 0.5
+drag_right_margin = 0.5
+drag_bottom_margin = 0.5
+
 [node name="Roundcat" type="Sprite2D" parent="."]
 position = Vector2(257, 3.63798e-12)
-scale = Vector2(1.90625, 1.90625)
 texture = ExtResource("2_nl1g0")
 
 [node name="NPCInteraction" parent="Roundcat" instance=ExtResource("3_euu1y")]
@@ -23,23 +29,39 @@ Dialog = "res://dialogs/props.json"
 position = Vector2(4, -3)
 shape = SubResource("RectangleShape2D_xylal")
 
+[node name="Label" type="Label" parent="Roundcat"]
+offset_left = -5.0
+offset_top = -41.0
+offset_right = 6.0
+offset_bottom = -18.0
+theme_override_font_sizes/font_size = 16
+text = "Z"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Roundcat2" type="Sprite2D" parent="."]
+position = Vector2(-421, 3.63798e-12)
+texture = ExtResource("2_nl1g0")
+flip_h = true
+
+[node name="NPCInteraction" parent="Roundcat2" instance=ExtResource("3_euu1y")]
+position = Vector2(-1.57376, 1.57376)
+scale = Vector2(0.52459, 0.52459)
+Dialog = "res://dialogs/props.json"
+Group = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roundcat2/NPCInteraction"]
+position = Vector2(4, -3)
+shape = SubResource("RectangleShape2D_xylal")
+
+[node name="Label" type="Label" parent="Roundcat2"]
+offset_left = -5.0
+offset_top = -41.0
+offset_right = 6.0
+offset_bottom = -18.0
+theme_override_font_sizes/font_size = 16
+text = "Z"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="player" parent="." instance=ExtResource("1_4dmj6")]
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(1.695, 1.695)
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.5
-drag_top_margin = 0.5
-drag_right_margin = 0.5
-drag_bottom_margin = 0.5
-
-[node name="Label" type="Label" parent="."]
-offset_top = -212.0
-offset_right = 40.0
-offset_bottom = -189.0
-text = "How to interact:
-    Move your character on top of the object.
-    Press Z.
-    Have a conversation."

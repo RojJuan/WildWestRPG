@@ -4,5 +4,10 @@
 		{"speaker": "YOU", "text": "(In the desert of all places?)", "color": "#16a0ef"},
 		
 		{"speaker": "CAT", "text": "boy get yo ass on"}
+	],
+	[
+		{"speaker": "CAT", "text": "go"},
+		{"speaker": "CAT", "text": "get outta here"},
+		{"speaker": "CAT", "text": "scram"}
 	]
 ]

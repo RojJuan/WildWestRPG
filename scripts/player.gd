@@ -2,42 +2,33 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
-@export var Sprite : Sprite2D
-@export var AnimPlayer : AnimationPlayer
+@export var Sprite : AnimatedSprite2D
+@export var InteractionCollider : CollisionShape2D
+
+@export var InteractColliderDistance := 30.0
 
 var frozen := false
 
-var xDir = "R"
-var yDir = "U"
 func _physics_process(delta: float) -> void:
+	if frozen: return
+	
 	var xInputDir = Input.get_axis("LEFT", "RIGHT")
 	var yInputDir = Input.get_axis("UP", "DOWN")
+	var inputDir = Vector2(xInputDir, yInputDir)
 	
-	velocity = Vector2(xInputDir, yInputDir) 
+	velocity = inputDir
 	velocity = velocity.normalized() * SPEED
 	
+	if !inputDir == Vector2.ZERO:
+		InteractionCollider.position.x = InteractColliderDistance * xInputDir
+		InteractionCollider.position.y = InteractColliderDistance * yInputDir
+		Sprite.play("walk")
+	else:
+		Sprite.stop()
+		
 	if xInputDir > 0:
-		if xDir != "R":
-			turned = false
-		xDir = "R"
+		Sprite.flip_h = false
 	elif xInputDir < 0:
-		if xDir != "L":
-			turned = false
-		xDir = "L"
-	
-	change_direction()
-	
-	if frozen: velocity = Vector2.ZERO
-	move_and_slide()
+		Sprite.flip_h = true
 
-var turned = false
-func change_direction():
-	if !frozen:
-		if xDir == "R" and !turned:
-			AnimPlayer.play("flip_l")
-			await AnimPlayer.animation_finished
-			turned = true
-		elif xDir == "L" and !turned:
-			AnimPlayer.play("flip_r")
-			await AnimPlayer.animation_finished
-			turned = true
+	move_and_slide()
