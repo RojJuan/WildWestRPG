@@ -1,86 +1,87 @@
 [gd_scene load_steps=11 format=3 uid="uid://dvepkgbe61qwl"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tuq8q"]
-[ext_resource type="Texture2D" uid="uid://cs1s07immfv27" path="res://assets/sprites/Micheal-spritesheet.png" id="2_313g4"]
-[ext_resource type="Texture2D" uid="uid://capi5c6jtcvik" path="res://icon.svg" id="3_41s7r"]
+[ext_resource type="Texture2D" uid="uid://bbq8beiwbndcf" path="res://assets/sprites/Micheal-spreadsheet.png" id="2_p6ygm"]
+[ext_resource type="Texture2D" uid="uid://capi5c6jtcvik" path="res://icon.svg" id="3_pl2an"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wi8f0"]
-atlas = ExtResource("2_313g4")
-region = Rect2(1, 4, 23, 23)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtt2n"]
+atlas = ExtResource("2_p6ygm")
+region = Rect2(0, 0, 23, 27)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y3gpj"]
-atlas = ExtResource("2_313g4")
-region = Rect2(24, 4, 23, 23)
+[sub_resource type="AtlasTexture" id="AtlasTexture_k28fs"]
+atlas = ExtResource("2_p6ygm")
+region = Rect2(23, 0, 23, 27)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ipy3w"]
-atlas = ExtResource("2_313g4")
-region = Rect2(47, 4, 23, 23)
+[sub_resource type="AtlasTexture" id="AtlasTexture_80m8r"]
+atlas = ExtResource("2_p6ygm")
+region = Rect2(46, 0, 23, 27)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6kja2"]
-atlas = ExtResource("2_313g4")
-region = Rect2(70, 4, 23, 23)
+[sub_resource type="AtlasTexture" id="AtlasTexture_smeew"]
+atlas = ExtResource("2_p6ygm")
+region = Rect2(69, 0, 23, 27)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_orgke"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_45c5e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wi8f0")
+"texture": SubResource("AtlasTexture_xtt2n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y3gpj")
+"texture": SubResource("AtlasTexture_k28fs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ipy3w")
+"texture": SubResource("AtlasTexture_80m8r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6kja2")
+"texture": SubResource("AtlasTexture_smeew")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kteck"]
-size = Vector2(18, 46)
+size = Vector2(20, 42)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qir1i"]
-size = Vector2(30, 30)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dl3o"]
 
-[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("Sprite", "InteractionCollider")]
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("Sprite")]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_tuq8q")
 Sprite = NodePath("AnimatedSprite2D")
-InteractionCollider = NodePath("interactCollider/collision")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_orgke")
+sprite_frames = SubResource("SpriteFrames_45c5e")
 animation = &"walk"
+frame_progress = 0.935915
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 0)
+position = Vector2(5, 6)
 shape = SubResource("RectangleShape2D_kteck")
 
-[node name="interactCollider" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(5, 6)
 collision_layer = 2
 collision_mask = 2
 
-[node name="collision" type="CollisionShape2D" parent="interactCollider"]
-position = Vector2(4, 0)
-shape = SubResource("RectangleShape2D_qir1i")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+unique_name_in_owner = true
+position = Vector2(25, 0)
+shape = SubResource("RectangleShape2D_3dl3o")
 
-[node name="DEBUG" type="TextureRect" parent="interactCollider/collision"]
+[node name="debug" type="TextureRect" parent="Area2D/CollisionShape2D"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -7.0
-offset_top = -7.0
-offset_right = 7.0
-offset_bottom = 7.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_41s7r")
+texture = ExtResource("3_pl2an")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true

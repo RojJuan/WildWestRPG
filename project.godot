@@ -26,10 +26,6 @@ window/stretch/aspect="expand"
 
 project/assembly_name="wild-west-rpg"
 
-[gui]
-
-theme/custom_font="res://assets/fonts/pixellari/Pixellari.ttf"
-
 [input]
 
 UP={

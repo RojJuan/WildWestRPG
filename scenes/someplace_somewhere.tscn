@@ -10,7 +10,7 @@ size = Vector2(48, 54)
 [node name="someplace_somewhere" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.695, 1.695)
+zoom = Vector2(2.405, 2.405)
 drag_left_margin = 0.5
 drag_top_margin = 0.5
 drag_right_margin = 0.5
@@ -29,18 +29,8 @@ Dialog = "res://dialogs/props.json"
 position = Vector2(4, -3)
 shape = SubResource("RectangleShape2D_xylal")
 
-[node name="Label" type="Label" parent="Roundcat"]
-offset_left = -5.0
-offset_top = -41.0
-offset_right = 6.0
-offset_bottom = -18.0
-theme_override_font_sizes/font_size = 16
-text = "Z"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Roundcat2" type="Sprite2D" parent="."]
-position = Vector2(-421, 3.63798e-12)
+position = Vector2(-243, -90)
 texture = ExtResource("2_nl1g0")
 flip_h = true
 
@@ -53,15 +43,5 @@ Group = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Roundcat2/NPCInteraction"]
 position = Vector2(4, -3)
 shape = SubResource("RectangleShape2D_xylal")
-
-[node name="Label" type="Label" parent="Roundcat2"]
-offset_left = -5.0
-offset_top = -41.0
-offset_right = 6.0
-offset_bottom = -18.0
-theme_override_font_sizes/font_size = 16
-text = "Z"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="player" parent="." instance=ExtResource("1_4dmj6")]

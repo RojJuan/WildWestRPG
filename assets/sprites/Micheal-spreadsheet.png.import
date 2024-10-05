@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs1s07immfv27"
-path="res://.godot/imported/Micheal-spritesheet.png-40b49a45cce763a427654f952a15a13a.ctex"
+uid="uid://bbq8beiwbndcf"
+path="res://.godot/imported/Micheal-spreadsheet.png-21727b15c6a0ba4b7df70033d6612813.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Micheal-spritesheet.png"
-dest_files=["res://.godot/imported/Micheal-spritesheet.png-40b49a45cce763a427654f952a15a13a.ctex"]
+source_file="res://assets/sprites/Micheal-spreadsheet.png"
+dest_files=["res://.godot/imported/Micheal-spreadsheet.png-21727b15c6a0ba4b7df70033d6612813.ctex"]
 
 [params]
 

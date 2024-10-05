@@ -4,27 +4,34 @@
 [ext_resource type="Script" path="res://scripts/dialog.gd" id="1_hq7y6"]
 
 [node name="dialog" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_hq7y6")
 
-[node name="bugfix" type="CanvasLayer" parent="."]
-visible = false
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Speaker" type="Panel" parent="bugfix"]
+[node name="Speaker" type="Panel" parent="Control"]
 z_as_relative = false
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -801.0
-offset_top = -300.0
-offset_right = -346.0
-offset_bottom = -245.0
+offset_left = -791.0
+offset_top = -230.0
+offset_right = -354.0
+offset_bottom = -176.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_5vhxj")
 
-[node name="speaker_label" type="Label" parent="bugfix/Speaker"]
+[node name="speaker_label" type="Label" parent="Control/Speaker"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -33,37 +40,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "Kendrick"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Dialog" type="Panel" parent="bugfix"]
+[node name="Dialog" type="Panel" parent="Control"]
 z_as_relative = false
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -801.0
-offset_top = -237.0
-offset_right = 801.0
-offset_bottom = -72.0
+offset_left = -791.0
+offset_top = -164.0
+offset_right = 791.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_5vhxj")
 
-[node name="dialog_label" type="Label" parent="bugfix/Dialog"]
+[node name="dialog_label" type="Label" parent="Control/Dialog"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 18.0
-offset_top = 8.0
-offset_right = -17.0
-offset_bottom = -8.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "gadsgadsga"
 autowrap_mode = 3
