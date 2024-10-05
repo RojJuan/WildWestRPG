@@ -4,10 +4,10 @@ var is_in_hitbox := false
 var is_in_converstation := false
 var is_speaking := false
 
-func on_entered(body : Node2D): 
+func on_entered(area : Area2D): 
 	is_in_hitbox = true
-	player = body
-func on_exited(_body : Node2D): is_in_hitbox = false
+	player = area.get_parent()
+func on_exited(_area : Area2D): is_in_hitbox = false
 
 @onready var dialog = $dialog
 

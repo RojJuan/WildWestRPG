@@ -4,9 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://dspwvky1vm3sd" path="res://scenes/dialog.tscn" id="2_cpm4s"]
 
 [node name="NPCInteraction" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_77anv")
 
 [node name="dialog" parent="." instance=ExtResource("2_cpm4s")]
 
-[connection signal="body_entered" from="." to="." method="on_entered"]
-[connection signal="body_exited" from="." to="." method="on_exited"]
+[connection signal="area_entered" from="." to="." method="on_entered"]
+[connection signal="area_exited" from="." to="." method="on_exited"]
