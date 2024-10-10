@@ -1,7 +1,7 @@
 [
 	[
-		{"speaker": "YOU", "text": "(It's a cat.)", "color": "#16a0ef"},
-		{"speaker": "YOU", "text": "(In the desert of all places?)", "color": "#16a0ef"},
+		{"speaker": "MICHAEL", "text": "(It's a cat.)"},
+		{"speaker": "MICHAEL", "text": "(In the desert of all places?)"},
 		
 		{"speaker": "CAT", "text": "boy get yo ass on"}
 	],
