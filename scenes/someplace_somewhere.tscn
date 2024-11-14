@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://efgrxbhx5g0g"]
+[gd_scene load_steps=9 format=3 uid="uid://efgrxbhx5g0g"]
 
 [ext_resource type="PackedScene" uid="uid://dvepkgbe61qwl" path="res://scenes/player.tscn" id="1_4dmj6"]
 [ext_resource type="Texture2D" uid="uid://70r7k8qvi2tf" path="res://assets/sprites/roundcat.png" id="2_nl1g0"]
@@ -287,9 +287,13 @@ texture = ExtResource("4_keyo2")
 33:7/0 = 0
 34:7/0 = 0
 0:8/0 = 0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:8/0 = 0
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:8/0 = 0
 5:8/0 = 0
 6:8/0 = 0
@@ -322,9 +326,13 @@ texture = ExtResource("4_keyo2")
 33:8/0 = 0
 34:8/0 = 0
 0:9/0 = 0
+0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:9/0 = 0
+1:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:9/0 = 0
+2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:9/0 = 0
+3:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:9/0 = 0
 5:9/0 = 0
 6:9/0 = 0
@@ -357,9 +365,13 @@ texture = ExtResource("4_keyo2")
 33:9/0 = 0
 34:9/0 = 0
 0:10/0 = 0
+0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:10/0 = 0
+1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:10/0 = 0
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:10/0 = 0
+3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:10/0 = 0
 5:10/0 = 0
 6:10/0 = 0
@@ -392,9 +404,13 @@ texture = ExtResource("4_keyo2")
 33:10/0 = 0
 34:10/0 = 0
 0:11/0 = 0
+0:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:11/0 = 0
+1:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:11/0 = 0
+2:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:11/0 = 0
+3:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:11/0 = 0
 5:11/0 = 0
 6:11/0 = 0
@@ -1228,10 +1244,14 @@ texture = ExtResource("4_keyo2")
 34:34/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_pqay7"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vvbpw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xylal"]
 size = Vector2(48, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aabt0"]
+size = Vector2(25, 22)
 
 [node name="someplace_somewhere" type="Node2D"]
 
@@ -1267,6 +1287,10 @@ Group = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Roundcat2/NPCInteraction"]
 position = Vector2(4, -3)
 shape = SubResource("RectangleShape2D_xylal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roundcat2"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_aabt0")
 
 [node name="player" parent="." instance=ExtResource("1_4dmj6")]
 
