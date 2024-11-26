@@ -23,7 +23,9 @@ func _input(event: InputEvent) -> void:
 		keyb = true
 
 func _physics_process(_delta: float) -> void:
-	if frozen: return
+	if frozen: 
+		Sprite.stop()
+		return
 	
 	var xInputDir = deadzone(Input.get_joy_axis(0, JOY_AXIS_LEFT_X), 0.1)
 	var yInputDir = deadzone(Input.get_joy_axis(0, JOY_AXIS_LEFT_Y), 0.1)
@@ -39,16 +41,25 @@ func _physics_process(_delta: float) -> void:
 		%CollisionShape2D.position = inputDir * InteractionColliderDistance
 	
 	if xInputDir != 0:
-		if Sprite.frame == 0:
-			Sprite.frame = 1
-		Sprite.play("walk")
+		if yInputDir == 0:
+			if Sprite.frame == 0:
+				Sprite.frame = 1
+			Sprite.play("walk_horizantal")
 		if deadzone(xInputDir, 0.1) > 0:
 			Sprite.flip_h = false
 		elif deadzone(xInputDir, 0.1) < 0:
 			Sprite.flip_h = true
-	else:
+	
+	if yInputDir != 0:
+		if velocity.y > 0:
+			Sprite.play("walk_down")
+		else:
+			Sprite.play("walk_up")
+			
+	if inputDir == Vector2.ZERO:
 		Sprite.stop()
-
-	velocity = inputDir * SPEED
+		
+	velocity = inputDir
+	velocity = velocity.normalized() * SPEED
 
 	move_and_slide()

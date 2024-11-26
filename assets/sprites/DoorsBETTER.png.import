@@ -2,16 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brbmdbpviefwe"
-path="res://.godot/imported/Micheal-spreadsheetV2.png-f6bb8234f1943e477bea4f0323f02f38.ctex"
+<<<<<<< HEAD
+uid="uid://cdk6rh8gdxmwk"
+=======
+uid="uid://dpyet12b5m44h"
+>>>>>>> c9b10e48029fdbc93ae820f5579f97eacc3dc12f
+path="res://.godot/imported/DoorsBETTER.png-18ef04d89fb10fcdc2ec0d5673d9cb96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Micheal-spreadsheetV2.png"
-dest_files=["res://.godot/imported/Micheal-spreadsheetV2.png-f6bb8234f1943e477bea4f0323f02f38.ctex"]
+source_file="res://assets/sprites/DoorsBETTER.png"
+dest_files=["res://.godot/imported/DoorsBETTER.png-18ef04d89fb10fcdc2ec0d5673d9cb96.ctex"]
 
 [params]
 

@@ -1,11 +1,7 @@
 [
 	[
-		{"speaker": "MICHAEL", "text": "(It's a cat.)"},
-		{"speaker": "MICHAEL", "text": "(In the desert of all places?)"},
-		
-		{"speaker": "CAT", "text": "boy get yo ass on"}
+		{"speaker": "MICHAEL", "text": "(It's my cat.)"},
+		{"speaker": "CAT", "text": "..."},
+		{"speaker": "MICHAEL", "text": "(He doesn't talk much.)"}
 	],
-	[
-		{"speaker": "CAT", "text": "i hate you !!!"},
-	]
 ]
