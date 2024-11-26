@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
-
+const SPEED = 300.0
 
 @export var Sprite : AnimatedSprite2D
 
@@ -22,10 +21,8 @@ func _input(event: InputEvent) -> void:
 	else:
 		keyb = true
 
-func _physics_process(_delta: float) -> void:
-	if frozen: 
-		Sprite.stop()
-		return
+func _physics_process(delta: float) -> void:
+	if frozen: return
 	
 	var xInputDir = deadzone(Input.get_joy_axis(0, JOY_AXIS_LEFT_X), 0.1)
 	var yInputDir = deadzone(Input.get_joy_axis(0, JOY_AXIS_LEFT_Y), 0.1)
@@ -41,25 +38,15 @@ func _physics_process(_delta: float) -> void:
 		%CollisionShape2D.position = inputDir * InteractionColliderDistance
 	
 	if xInputDir != 0:
-		if yInputDir == 0:
-			if Sprite.frame == 0:
-				Sprite.frame = 1
-			Sprite.play("walk_horizantal")
+		if Sprite.frame == 0: Sprite.frame = 1
+		Sprite.play("walk")
 		if deadzone(xInputDir, 0.1) > 0:
 			Sprite.flip_h = false
 		elif deadzone(xInputDir, 0.1) < 0:
 			Sprite.flip_h = true
-	
-	if yInputDir != 0:
-		if velocity.y > 0:
-			Sprite.play("walk_down")
-		else:
-			Sprite.play("walk_up")
-			
-	if inputDir == Vector2.ZERO:
+	else:
 		Sprite.stop()
-		
-	velocity = inputDir
-	velocity = velocity.normalized() * SPEED
+
+	velocity = inputDir * SPEED
 
 	move_and_slide()

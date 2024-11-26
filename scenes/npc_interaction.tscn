@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://drxnpmj85avap"]
+[gd_scene load_steps=4 format=3 uid="uid://drxnpmj85avap"]
 
 [ext_resource type="Script" path="res://scripts/npc_interaction.gd" id="1_77anv"]
 [ext_resource type="PackedScene" uid="uid://dspwvky1vm3sd" path="res://scenes/dialog.tscn" id="2_cpm4s"]
+[ext_resource type="Texture2D" uid="uid://cgcrbm3mrv3jx" path="res://assets/sprites/micheal.png" id="3_dxm3j"]
 
 [node name="NPCInteraction" type="Area2D"]
 collision_layer = 2
@@ -9,6 +10,10 @@ collision_mask = 2
 script = ExtResource("1_77anv")
 
 [node name="dialog" parent="." instance=ExtResource("2_cpm4s")]
+
+[node name="Micheal" type="Sprite2D" parent="."]
+position = Vector2(-1, 41)
+texture = ExtResource("3_dxm3j")
 
 [connection signal="area_entered" from="." to="." method="on_entered"]
 [connection signal="area_exited" from="." to="." method="on_exited"]
