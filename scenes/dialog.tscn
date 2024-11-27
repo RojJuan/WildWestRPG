@@ -59,17 +59,22 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_5vhxj")
 
-[node name="dialog_label" type="Label" parent="Control/Dialog"]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="Control/Dialog"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 7.0
-offset_right = -7.0
-offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="dialog_label" type="Label" parent="Control/Dialog/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1558, 120)
+layout_mode = 2
+size_flags_vertical = 1
 theme_override_font_sizes/font_size = 32
 autowrap_mode = 3

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 100
 
 @export var Sprite : AnimatedSprite2D
 
@@ -39,11 +39,16 @@ func _physics_process(delta: float) -> void:
 	
 	if xInputDir != 0:
 		if Sprite.frame == 0: Sprite.frame = 1
-		Sprite.play("walk")
-		if deadzone(xInputDir, 0.1) > 0:
+		Sprite.play("walk_horizantal")
+		if deadzone(xInputDir, 0.1) > 0: # RIGHT
 			Sprite.flip_h = false
-		elif deadzone(xInputDir, 0.1) < 0:
+		elif deadzone(xInputDir, 0.1) < 0: # LEFT
 			Sprite.flip_h = true
+	elif yInputDir != 0:
+		if deadzone(yInputDir, 0.1) > 0: # DOWN
+			Sprite.play("walk_down")
+		else: # UP
+			Sprite.play("walk_up")
 	else:
 		Sprite.stop()
 
