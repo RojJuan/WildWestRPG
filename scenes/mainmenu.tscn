@@ -116,4 +116,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_m3k4g")
 text = "Exit"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
