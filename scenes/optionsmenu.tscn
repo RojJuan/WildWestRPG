@@ -130,5 +130,5 @@ autoplay = true
 [connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/fullscreen" to="." method="_on_options_pressed"]
 [connection signal="toggled" from="VBoxContainer/fullscreen" to="." method="_on_fullscreen_toggled"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

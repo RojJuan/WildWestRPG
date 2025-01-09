@@ -21,7 +21,7 @@ func _input(event: InputEvent) -> void:
 	else:
 		keyb = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if frozen: return
 	
 	var xInputDir = deadzone(Input.get_joy_axis(0, JOY_AXIS_LEFT_X), 0.1)
