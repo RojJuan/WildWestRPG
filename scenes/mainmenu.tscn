@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dt8pefhprfylx"]
 
-[ext_resource type="Script" path="res://scenes/mainmenu.gd" id="1_xsf6c"]
+[ext_resource type="Script" path="res://mainmenu.gd" id="1_xsf6c"]
 [ext_resource type="Texture2D" uid="uid://sbp2llq046gx" path="res://assets/sprites/vision_background.png" id="2_6jknt"]
 [ext_resource type="FontFile" uid="uid://b3ln4n78bxmsk" path="res://assets/fonts/pixellari/Pixellari.ttf" id="3_rw8b6"]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh6y4hxgpxe6r"]
+[gd_scene load_steps=11 format=3 uid="uid://bh6y4hxgpxe6r"]
 
-[ext_resource type="Script" path="res://scenes/optionsmenu.gd" id="1_7adws"]
+[ext_resource type="Script" path="res://scripts/optionsmenu.gd" id="1_7adws"]
 [ext_resource type="Texture2D" uid="uid://douoyax7ihgyd" path="res://assets/sprites/tilemap1.png" id="2_5jjbo"]
 [ext_resource type="FontFile" uid="uid://b3ln4n78bxmsk" path="res://assets/fonts/pixellari/Pixellari.ttf" id="3_drmlw"]
 [ext_resource type="AudioStream" uid="uid://dw2lcbs70iy5w" path="res://assets/music/Monkeys Spinning Monkeys.mp3" id="4_j7spk"]
+[ext_resource type="PackedScene" uid="uid://cool5gw8ot8bl" path="res://scenes/volumeslider.tscn" id="4_x4wsu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdc2t"]
 texture = ExtResource("2_5jjbo")
@@ -86,10 +87,40 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_85vfv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_m3k4g")
 text = "volume"
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-max_value = 2.0
-step = 0.01
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_drmlw")
+theme_override_font_sizes/font_size = 50
+text = "MASTER"
+
+[node name="Master" parent="VBoxContainer" instance=ExtResource("4_x4wsu")]
+layout_mode = 2
+value = 1.0
+busName = "Master"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_drmlw")
+theme_override_font_sizes/font_size = 50
+text = "MUSIC"
+
+[node name="Music" parent="VBoxContainer" instance=ExtResource("4_x4wsu")]
+layout_mode = 2
+value = 0.5
+busName = "Music"
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_drmlw")
+theme_override_font_sizes/font_size = 50
+text = "SOUND EFFECT"
+
+[node name="SFX" parent="VBoxContainer" instance=ExtResource("4_x4wsu")]
+layout_mode = 2
+busName = "SFX"
 
 [node name="fullscreen" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -125,9 +156,9 @@ text = "Back"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_j7spk")
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/volume" to="." method="_on_play_pressed"]
-[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/fullscreen" to="." method="_on_options_pressed"]
 [connection signal="toggled" from="VBoxContainer/fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_exit_pressed"]

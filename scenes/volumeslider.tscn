@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cool5gw8ot8bl"]
+
+[ext_resource type="Script" path="res://scripts/volumeslider.gd" id="1_enccm"]
+
+[node name="Volumeslider" type="HSlider"]
+offset_right = 8.0
+offset_bottom = 16.0
+max_value = 1.0
+step = 0.01
+script = ExtResource("1_enccm")
+
+[connection signal="drag_ended" from="." to="." method="drag_ended"]
