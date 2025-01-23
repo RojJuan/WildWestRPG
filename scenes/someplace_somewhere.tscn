@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://efgrxbhx5g0g"]
+[gd_scene load_steps=12 format=4 uid="uid://efgrxbhx5g0g"]
 
 [ext_resource type="PackedScene" uid="uid://dvepkgbe61qwl" path="res://scenes/player.tscn" id="1_4dmj6"]
 [ext_resource type="Texture2D" uid="uid://uy1spmtb8tfk" path="res://assets/sprites/Wooden_House_Walls_Tilset.png" id="1_278jm"]
 [ext_resource type="Texture2D" uid="uid://70r7k8qvi2tf" path="res://assets/sprites/roundcat.png" id="2_nl1g0"]
 [ext_resource type="PackedScene" uid="uid://drxnpmj85avap" path="res://scenes/npc_interaction.tscn" id="3_euu1y"]
+[ext_resource type="Script" path="res://scenes/scenechange.gd" id="5_vrx7q"]
+[ext_resource type="Texture2D" uid="uid://capi5c6jtcvik" path="res://icon.svg" id="6_fmbc6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0uhou"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8marn"]
 texture = ExtResource("1_278jm")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -37,13 +39,17 @@ texture = ExtResource("1_278jm")
 
 [sub_resource type="TileSet" id="TileSet_aflck"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_0uhou")
+sources/0 = SubResource("TileSetAtlasSource_8marn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xylal"]
 size = Vector2(48, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o50i6"]
 size = Vector2(14, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jtqmc"]
+radius = 7.0
+height = 42.0
 
 [node name="someplace_somewhere" type="Node2D"]
 
@@ -73,11 +79,12 @@ shape = SubResource("RectangleShape2D_o50i6")
 debug_color = Color(0.564092, 0.0102178, 4.81308e-08, 0.42)
 
 [node name="player" parent="." instance=ExtResource("1_4dmj6")]
+position = Vector2(-2, -1)
 scale = Vector2(0.5, 0.5)
 motion_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-scale = Vector2(1.42857, 1.42857)
+scale = Vector2(22.0444, -1.32476)
 zoom = Vector2(2.405, 2.405)
 process_callback = 0
 position_smoothing_enabled = true
@@ -86,3 +93,19 @@ drag_left_margin = 0.5
 drag_top_margin = 0.5
 drag_right_margin = 0.5
 drag_bottom_margin = 0.5
+
+[node name="SceneTrigger" type="Area2D" parent="."]
+position = Vector2(-199, -77)
+script = ExtResource("5_vrx7q")
+connected_scene = "someplace_somewhere_outside"
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneTrigger"]
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(0.28125, 0.101563)
+texture = ExtResource("6_fmbc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+rotation = -1.62611
+shape = SubResource("CapsuleShape2D_jtqmc")
+
+[connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
