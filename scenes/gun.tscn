@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqwtq5krp3kwa"]
+
+[ext_resource type="Script" path="res://gun.gd" id="1_s030v"]
+[ext_resource type="Texture2D" uid="uid://d2lnhofvwvies" path="res://assets/sprites/gunspredsheetBETTER.png" id="2_4sufa"]
+
+[node name="gun" type="Node2D"]
+script = ExtResource("1_s030v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_4sufa")
+hframes = 2
+vframes = 3

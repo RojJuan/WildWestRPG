@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dspwvky1vm3sd"]
 
-[ext_resource type="Theme" uid="uid://bwo12chwsxdug" path="res://dialog.tres" id="1_5vhxj"]
+[ext_resource type="Theme" uid="uid://bwo12chwsxdug" path="res://ui.tres" id="1_5vhxj"]
 [ext_resource type="Script" path="res://scripts/dialog.gd" id="1_hq7y6"]
 
 [node name="dialog" type="CanvasLayer"]

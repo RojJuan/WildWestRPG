@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bbq8beiwbndcf" path="res://assets/sprites/Micheal-spreadsheet.png" id="2_p6ygm"]
 [ext_resource type="Texture2D" uid="uid://dbu4o4jocp76j" path="res://assets/sprites/micheal-spreadsheetUSING.png" id="2_v26h4"]
 [ext_resource type="Texture2D" uid="uid://capi5c6jtcvik" path="res://icon.svg" id="3_pl2an"]
-[ext_resource type="PackedScene" uid="uid://bxc7vayiao2q0" path="res://assets/sprites/gun/gun.tscn" id="5_l2s0h"]
+[ext_resource type="PackedScene" uid="uid://cqwtq5krp3kwa" path="res://scenes/gun.tscn" id="5_aj4vk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gslj3"]
 atlas = ExtResource("2_v26h4")
@@ -126,5 +126,8 @@ grow_vertical = 2
 texture = ExtResource("3_pl2an")
 expand_mode = 1
 
-[node name="Gun" parent="." instance=ExtResource("5_l2s0h")]
-position = Vector2(5.71429, 17.1429)
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(34.2857, 0)
+
+[node name="gun" parent="." instance=ExtResource("5_aj4vk")]
+position = Vector2(8.57143, -7.14286)
